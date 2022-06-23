@@ -41,6 +41,48 @@ class ReactApp extends React.Component {
           id: 'Heater-1',
           url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
         },
+        { 
+          keyCode: 69,
+          keyTrigger: 'E',
+          id: 'Heater-1',
+          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
+        },
+        { 
+          keyCode: 65,
+          keyTrigger: 'A',
+          id: 'Heater-1',
+          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
+        },
+        { 
+          keyCode: 83,
+          keyTrigger: 'S',
+          id: 'Heater-1',
+          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
+        },
+        { 
+          keyCode: 68,
+          keyTrigger: 'D',
+          id: 'Heater-1',
+          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
+        },
+        { 
+          keyCode: 90,
+          keyTrigger: 'Z',
+          id: 'Heater-1',
+          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
+        },
+        { 
+          keyCode: 88,
+          keyTrigger: 'X',
+          id: 'Heater-1',
+          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
+        },
+        { 
+          keyCode: 67,
+          keyTrigger: 'C',
+          id: 'Heater-1',
+          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/tom.wav"
+        },
         
       ]
     }
