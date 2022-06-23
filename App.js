@@ -28,132 +28,84 @@ class ReactApp extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      Sounds: [ 
-        { 
-          keyCode: 81,
-          keyTrigger: 'Q',
-          id: 'kick',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/kick.wav"
-        },
-        { 
-          keyCode: 87,
-          keyTrigger: 'W',
-          id: 'openhat',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
-        },
-        { 
-          keyCode: 69,
-          keyTrigger: 'E',
-          id: 'ride',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/ride.wav"
-        },
-        { 
-          keyCode: 65,
-          keyTrigger: 'A',
-          id: 'boom',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/boom.wav"
-        },
-        { 
-          keyCode: 83,
-          keyTrigger: 'S',
-          id: 'clap',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/clap.wav"
-        },
-        { 
-          keyCode: 68,
-          keyTrigger: 'D',
-          id: 'hihat',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/hihat.wav"
-        },
-        { 
-          keyCode: 90,
-          keyTrigger: 'Z',
-          id: 'snare',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/snare.wav"
-        },
-        { 
-          keyCode: 88,
-          keyTrigger: 'X',
-          id: 'tink',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/tink.wav"
-        },
-        { 
-          keyCode: 67,
-          keyTrigger: 'C',
-          id: 'tom',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/tom.wav"
-        },
-        
-      ]
+
     }
   }
   
-  playSound = (letter) => {
-    const sound = letter;
-    console.log("sound = " + sound)
+
+  playSound(id) {
+    const sound = document.getElementById(id);
+    console.log("ID = " + id);
+    sound.currentTime = 0;
     sound.play();
+    setTimeout(() =>  100);
+  }
+
+  handleKeyPress(e) {
+    var keyPress = e.toUpperCase()
+    this.playSound(keyPress);
   }
   
-
   render() {
     
     return (
-      <div id="wrapper">
+      <div id="wrapper" onKeyDown={ () => {this.handleKeyPress(event.key)}} tabIndex={-1}>
         
-        <div id="drum-machine">
+        <div id="drum-machine" >
           Drum Machine
-          
-          <div data-key="81" className="drum-pad" id="1" onClick={this.playSound(this.Q)}> 
-            <audio className="clip" id="Q" data-key="81" src="https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/kick.wav">test</audio> 
+
+          <div className="drum-pad" onClick={() => { this.playSound("Q")}}> 
+            <audio className="clip" id="Q" data-key="81" src="./sounds/kick.wav"></audio> 
             <kbd>Q</kbd> 
           </div>
           
-          <div data-key="87" className="drum-pad" id="2"> 
-            <audio className="clip" id="W" data-key="87" src="https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"></audio> 
+          <div className="drum-pad" onClick={() => { this.playSound("W")}}> 
+            <audio className="clip" id="W" data-key="87" src="./sounds/openhat.wav"></audio> 
             <kbd>W</kbd> 
           </div>
           
-          <div data-key="69" className="drum-pad" id="3"> 
-            <audio className="clip" id="E" data-key="69" src="https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/ride.wav"></audio>
+          <div className="drum-pad" onClick={() => { this.playSound("E")}}> 
+            <audio className="clip" id="E" data-key="69" src="./sounds/ride.wav"></audio>
             <kbd>E</kbd> 
           </div>
           
-          <div data-key="65" className="drum-pad" id="4"> 
-            <audio className="clip" id="A" data-key="65" src="https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/boom.wav"></audio> 
+          <div className="drum-pad" onClick={() => { this.playSound("A")}}> 
+            <audio className="clip" id="A" data-key="65" src="./sounds/boom.wav"></audio> 
             <kbd>A</kbd> 
           </div>
           
-          <div data-key="83" className="drum-pad" id="5"> 
-            <audio className="clip" id="S" data-key="83" src="https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/clap.wav"></audio> 
+          <div className="drum-pad" onClick={() => { this.playSound("S")}}> 
+            <audio className="clip" id="S" data-key="83" src="./sounds/clap.wav"></audio> 
             <kbd>S</kbd> 
           </div>
           
-          <div data-key="68" className="drum-pad" id="6">
-            <audio className="clip" id="D" data-key="68" src="https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/hihat.wav"></audio> 
+          <div className="drum-pad" onClick={() => { this.playSound("D")}}>
+            <audio className="clip" id="D" data-key="68" src="./sounds/hihat.wav"></audio> 
             <kbd>D</kbd> 
           </div>
           
-          <div data-key="90" className="drum-pad" id="7"> 
-            <audio className="clip" id="Z" data-key="90" src="https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/snare.wav"></audio>
+          <div className="drum-pad" onClick={() => { this.playSound("Z")}}> 
+            <audio className="clip" id="Z" data-key="90" src="./sounds/snare.wav"></audio>
             <kbd>Z</kbd> 
           </div>
           
-          <div data-key="88" className="drum-pad" id="8"> 
-            <audio className="clip" id="X" data-key="88" src="https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/tink.wav"></audio>
+          <div className="drum-pad" onClick={() => { this.playSound("X")}}> 
+            <audio className="clip" id="X" data-key="88" src="./sounds/tink.wav"></audio>
             <kbd>X</kbd> 
           </div>
           
-          <div data-key="67" className="drum-pad" id="9"> 
-            <audio className="clip" id="C" data-key="67" src="https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/tom.wav"></audio>
+          <div className="drum-pad" onClick={() => { this.playSound("C")}}> 
+            <audio className="clip" id="C" data-key="67" src="./sounds/tom.wav"></audio>
             <kbd>C</kbd> 
           </div>
-         
+          
           <div id="display">
             Display
           </div> 
+
         </div>
         
-        { /* // User Story #5: When I click on a .drum-pad element, the audio clip contained in its child audio element should be triggered.
+{ /* // User Story #5: When I click on a .drum-pad element, the audio clip contained in its child audio element should be triggered.
 
 // User Story #6: When I press the trigger key associated with each .drum-pad, the audio clip contained in its child audio element should be triggered (e.g. pressing the Q key should trigger the drum pad which contains the string Q, pressing the W key should trigger the drum pad which contains the string W, etc.). */ }
         
