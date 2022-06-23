@@ -32,55 +32,55 @@ class ReactApp extends React.Component {
         { 
           keyCode: 81,
           keyTrigger: 'Q',
-          id: 'Heater-1',
+          id: 'kick',
           url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/kick.wav"
         },
         { 
           keyCode: 87,
           keyTrigger: 'W',
-          id: 'Heater-1',
+          id: 'openhat',
           url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
         },
         { 
           keyCode: 69,
           keyTrigger: 'E',
-          id: 'Heater-1',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
+          id: 'ride',
+          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/ride.wav"
         },
         { 
           keyCode: 65,
           keyTrigger: 'A',
-          id: 'Heater-1',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
+          id: 'boom',
+          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/boom.wav"
         },
         { 
           keyCode: 83,
           keyTrigger: 'S',
-          id: 'Heater-1',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
+          id: 'clap',
+          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/clap.wav"
         },
         { 
           keyCode: 68,
           keyTrigger: 'D',
-          id: 'Heater-1',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
+          id: 'hihat',
+          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/hihat.wav"
         },
         { 
           keyCode: 90,
           keyTrigger: 'Z',
-          id: 'Heater-1',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
+          id: 'snare',
+          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/snare.wav"
         },
         { 
           keyCode: 88,
           keyTrigger: 'X',
-          id: 'Heater-1',
-          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
+          id: 'tink',
+          url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/tink.wav"
         },
         { 
           keyCode: 67,
           keyTrigger: 'C',
-          id: 'Heater-1',
+          id: 'tom',
           url: "https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/sounds/tom.wav"
         },
         
