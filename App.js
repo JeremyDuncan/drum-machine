@@ -29,7 +29,6 @@ class ReactApp extends React.Component {
     super(props)
     this.state = {
       display: "a"
-
     }
   }
   
@@ -45,23 +44,29 @@ class ReactApp extends React.Component {
   }
 
   handleKeyPress(e) {
+    if( e=="q" || e=="w" || e=="e" || 
+        e=="a" || e=="s" || e=="d" ||
+        e=="z" || e=="x" || e=="c")
     var keyPress = e.toUpperCase()
     this.playSound(keyPress);
   }
-  
+
+
   render() {
     
     return (
       <div id="wrapper" onKeyDown={ () => {this.handleKeyPress(event.key)}} tabIndex={-1}>
         <h1>Drum Machine</h1>
+        <p>Press the corresponding key on the keyboard or webpage to play a drum.</p>
+
         <div id="drum-machine" >
-          
           <div className="row-1">
-            <div className="drum-pad" id="q-drum" onClick={() => { this.playSound("Q")}}> 
+
+            <div className="drum-pad" id='q-drum' onClick={() => { this.playSound("Q")}}> 
               <audio className="clip" id="Q" data-key="81" src="./sounds/kick.wav"></audio> 
-              <kbd><p>Q</p></kbd> 
+              <kbd>Q</kbd> 
             </div>
-            
+
             <div className="drum-pad" id="w-drum" onClick={() => { this.playSound("W")}}> 
               <audio className="clip" id="W" data-key="87" src="./sounds/openhat.wav"></audio> 
               <kbd>W</kbd> 
@@ -106,8 +111,8 @@ class ReactApp extends React.Component {
               <kbd>C</kbd> 
             </div>
           </div>
-          
         </div>
+
         <div>
         <p id='display'>{this.state.display}</p>
         </div>
