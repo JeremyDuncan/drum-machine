@@ -28,12 +28,15 @@ class ReactApp extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      display: "a"
 
     }
   }
   
-
   playSound(id) {
+    this.setState({
+      display: id
+    });
     const sound = document.getElementById(id);
     console.log("ID = " + id);
     sound.currentTime = 0;
@@ -50,64 +53,64 @@ class ReactApp extends React.Component {
     
     return (
       <div id="wrapper" onKeyDown={ () => {this.handleKeyPress(event.key)}} tabIndex={-1}>
-        
+        Drum Machine
         <div id="drum-machine" >
-          Drum Machine
+          
+          <div className="row-1">
+            <div className="drum-pad" id="q-drum" onClick={() => { this.playSound("Q")}}> 
+              <audio className="clip" id="Q" data-key="81" src="./sounds/kick.wav"></audio> 
+              <kbd><p>Q</p></kbd> 
+            </div>
+            
+            <div className="drum-pad" id="w-drum" onClick={() => { this.playSound("W")}}> 
+              <audio className="clip" id="W" data-key="87" src="./sounds/openhat.wav"></audio> 
+              <kbd>W</kbd> 
+            </div>
+            
+            <div className="drum-pad" id="e-drum" onClick={() => { this.playSound("E")}}> 
+              <audio className="clip" id="E" data-key="69" src="./sounds/ride.wav"></audio>
+              <kbd>E</kbd> 
+            </div>
+          </div>
 
-          <div className="drum-pad" onClick={() => { this.playSound("Q")}}> 
-            <audio className="clip" id="Q" data-key="81" src="./sounds/kick.wav"></audio> 
-            <kbd>Q</kbd> 
+          <div className="row-2">
+            <div className="drum-pad" id="a-drum" onClick={() => { this.playSound("A")}}> 
+              <audio className="clip" id="A" data-key="65" src="./sounds/boom.wav"></audio> 
+              <kbd>A</kbd> 
+            </div>
+            
+            <div className="drum-pad" id="s-drum" onClick={() => { this.playSound("S")}}> 
+              <audio className="clip" id="S" data-key="83" src="./sounds/clap.wav"></audio> 
+              <kbd>S</kbd> 
+            </div>
+            
+            <div className="drum-pad" id="d-drum" onClick={() => { this.playSound("D")}}>
+              <audio className="clip" id="D" data-key="68" src="./sounds/hihat.wav"></audio> 
+              <kbd>D</kbd> 
+            </div>
           </div>
-          
-          <div className="drum-pad" onClick={() => { this.playSound("W")}}> 
-            <audio className="clip" id="W" data-key="87" src="./sounds/openhat.wav"></audio> 
-            <kbd>W</kbd> 
-          </div>
-          
-          <div className="drum-pad" onClick={() => { this.playSound("E")}}> 
-            <audio className="clip" id="E" data-key="69" src="./sounds/ride.wav"></audio>
-            <kbd>E</kbd> 
-          </div>
-          
-          <div className="drum-pad" onClick={() => { this.playSound("A")}}> 
-            <audio className="clip" id="A" data-key="65" src="./sounds/boom.wav"></audio> 
-            <kbd>A</kbd> 
-          </div>
-          
-          <div className="drum-pad" onClick={() => { this.playSound("S")}}> 
-            <audio className="clip" id="S" data-key="83" src="./sounds/clap.wav"></audio> 
-            <kbd>S</kbd> 
-          </div>
-          
-          <div className="drum-pad" onClick={() => { this.playSound("D")}}>
-            <audio className="clip" id="D" data-key="68" src="./sounds/hihat.wav"></audio> 
-            <kbd>D</kbd> 
-          </div>
-          
-          <div className="drum-pad" onClick={() => { this.playSound("Z")}}> 
-            <audio className="clip" id="Z" data-key="90" src="./sounds/snare.wav"></audio>
-            <kbd>Z</kbd> 
-          </div>
-          
-          <div className="drum-pad" onClick={() => { this.playSound("X")}}> 
-            <audio className="clip" id="X" data-key="88" src="./sounds/tink.wav"></audio>
-            <kbd>X</kbd> 
-          </div>
-          
-          <div className="drum-pad" onClick={() => { this.playSound("C")}}> 
-            <audio className="clip" id="C" data-key="67" src="./sounds/tom.wav"></audio>
-            <kbd>C</kbd> 
-          </div>
-          
-          <div id="display">
-            Display
-          </div> 
 
+          <div className="row-3">
+            <div className="drum-pad row-3" id="z-drum" onClick={() => { this.playSound("Z")}}> 
+              <audio className="clip" id="Z" data-key="90" src="./sounds/snare.wav"></audio>
+              <kbd>Z</kbd> 
+            </div>
+
+            <div className="drum-pad row-3" id="x-drum" onClick={() => { this.playSound("X")}}> 
+              <audio className="clip" id="X" data-key="88" src="./sounds/tink.wav"></audio>
+              <kbd>X</kbd> 
+            </div>
+            
+            <div className="drum-pad row-3" id="c-drum" onClick={() => { this.playSound("C")}}> 
+              <audio className="clip" id="C" data-key="67" src="./sounds/tom.wav"></audio>
+              <kbd>C</kbd> 
+            </div>
+          </div>
+          
         </div>
-        
-{ /* // User Story #5: When I click on a .drum-pad element, the audio clip contained in its child audio element should be triggered.
-
-// User Story #6: When I press the trigger key associated with each .drum-pad, the audio clip contained in its child audio element should be triggered (e.g. pressing the Q key should trigger the drum pad which contains the string Q, pressing the W key should trigger the drum pad which contains the string W, etc.). */ }
+        <div>
+        <p id='display'>{this.state.display}</p>
+        </div>
         
       </div>
     );
