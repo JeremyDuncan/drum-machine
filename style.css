@@ -1,10 +1,12 @@
 body {
   background-color: rgb(19, 91, 115);
+  margin: auto;
 }
+
 #wrapper {
   display: flex;
   flex-direction: column;
-  height: 45rem;
+  height: 43rem;
 
 }
 #wrapper >p {
@@ -18,6 +20,7 @@ body {
 }
 
 h1 {
+  margin-top: 120px;
   text-align: center;
   color: #FFFFFF;
   text-shadow:  0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 
@@ -70,7 +73,7 @@ h1 {
 
 .drum-pad:active {
   background-color: rgb(247, 241, 241);
-  
+
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -o-transform: scale(1.1);
@@ -90,3 +93,29 @@ h1 {
   margin-top: 5px;
 }
 
+footer {
+  display: flex;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 0px;
+  border-top: 2px solid rgb(51, 51, 51);
+
+  background-color: rgb(173, 173, 196);
+  height: 2rem;
+  justify-content: space-between;
+  padding: 10px 10px 10px 10px;
+}
+
+@media (max-width: 550px) {
+
+  h1 {
+    margin-top: 10px;
+  }
+  #display {
+    margin: 0px;
+  }
+  #wrapper {
+    height: 34rem;
+  }
+ 
+}
