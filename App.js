@@ -46,9 +46,10 @@ class ReactApp extends React.Component {
   handleKeyPress(e) {
     if( e=="q" || e=="w" || e=="e" || 
         e=="a" || e=="s" || e=="d" ||
-        e=="z" || e=="x" || e=="c")
+        e=="z" || e=="x" || e=="c"){
     var keyPress = e.toUpperCase()
     this.playSound(keyPress);
+    }
   }
 
 
