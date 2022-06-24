@@ -53,7 +53,7 @@ class ReactApp extends React.Component {
     
     return (
       <div id="wrapper" onKeyDown={ () => {this.handleKeyPress(event.key)}} tabIndex={-1}>
-        Drum Machine
+        <h1>Drum Machine</h1>
         <div id="drum-machine" >
           
           <div className="row-1">
