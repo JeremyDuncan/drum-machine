@@ -118,6 +118,15 @@ class ReactApp extends React.Component {
         <p id='display'>{this.state.display}</p>
         </div>
         
+        <footer> 
+          <div class="name">
+            Jeremy Duncan &copy; 2022
+          </div>
+          <div class="link">
+            <a href="https://github.com/JeremyDuncan">GitHub Profile</a>
+          </div>
+        </footer>
+
       </div>
     );
   }
